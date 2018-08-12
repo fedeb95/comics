@@ -1,0 +1,26 @@
+{
+  "name": "comics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite --baseDir ./app --port 8001\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedeb95/comics.git"
+  },
+  "author": "Federico Bonfiglio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedeb95/comics/issues"
+  },
+  "homepage": "https://github.com/fedeb95/comics#readme",
+  "dependencies": {
+    "angular": "^1.7.3"
+  }
+}
