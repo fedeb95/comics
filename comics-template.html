@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <div class="form-group">
+            <select name="series-search" class="form-control" ng-model="search.series">
+                <option ng-repeat="opt in comicSeries" value="{{opt.value}}">{{opt.name}}</option> 
+            </select> 
+        </div>
+        <div class="form-group">
+            <input ng-model="search.title" type="text" name="title-search" class="form-control" placeholder="Search by title..."></input>
+        </div>
+    </div>
+    <div class="list-group">
+      <div ng-repeat="comic in allcomics|filter:matchSearch">
+          <div ng-include="'single-comic.html'"></div>
+      </div>
+    </div>
+</div>

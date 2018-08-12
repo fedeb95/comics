@@ -1,0 +1,35 @@
+<form name="comicForm" novalidate>
+    <legend>Add a comic!</legend>
+    <div class="form-group">
+        <select name="series-search" class="form-control" ng-model="comic.series">
+            <option ng-repeat="opt in comicSeries" value="{{opt.value}}">{{opt.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="title" type="text" ng-model="comic.title" placeholder="Title" required></input>
+        <small class="error" ng-show="comicForm.title.$invalid &&
+            comicForm.title.$dirty" >Please insert a title</small>
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="number" type="number" ng-model="comic.number" placeholder="Number" required></input>
+        <small class="error" ng-show="comicForm.number.$invalid &&
+            comicForm.number.$dirty" >Please insert a valid number</small>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" name="description" ng-model="comic.description" placeholder="Description"></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-control btn btn-primary" for="file">
+        <input id="file" name="file" type="file" style="display:none;">
+        Upload Picture!
+      </label>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-default" ng-click="addComic()" type="submit" value="Add" ng-disabled="comicForm.$invalid"></input>
+    </div>
+    <div ng-hide="comicForm.$pristine" class="row"><!--Preview-->
+      <div class="col-sm-12">
+          <div ng-include="'single-comic.html'"></div>
+      </div>
+  </div>
+</form>
